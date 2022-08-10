@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GameActivity">
+    tools:context=".GameActivity"
+    android:background="@drawable/closed">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -47,93 +48,102 @@
 
             <TextView
                 android:id = "@+id/answer1"
-                android:layout_width="wrap_content"
+                android:layout_width="50pt"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text = "○"
                 android:textAlignment="center"
-                android:textColor="@color/red"
-                android:textSize="50pt">
+                android:textSize="50pt"
+                android:background="@drawable/chains">
             </TextView>
 
             <TextView
                 android:id = "@+id/answer2"
-                android:layout_width="wrap_content"
+                android:layout_width="50pt"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text = "○"
                 android:textAlignment="center"
-                android:textColor="@color/red"
-                android:textSize="50pt">
+                android:textSize="50pt"
+                android:background="@drawable/chains">
             </TextView>
 
             <TextView
                 android:id = "@+id/answer3"
-                android:layout_width="wrap_content"
+                android:layout_width="50pt"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text = "○"
                 android:textAlignment="center"
-                android:textColor="@color/red"
-                android:textSize="50pt">
+                android:textSize="50pt"
+                android:background="@drawable/chains">
             </TextView>
 
             <TextView
                 android:id = "@+id/answer4"
-                android:layout_width="wrap_content"
+                android:layout_width="50pt"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text = "○"
                 android:textAlignment="center"
-                android:textColor="@color/red"
-                android:textSize="50pt">
+                android:textSize="50pt"
+                android:background="@drawable/chains">
             </TextView>
 
             <TextView
                 android:id = "@+id/answer5"
-                android:layout_width="wrap_content"
+                android:layout_width="50pt"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text = "○"
                 android:textAlignment="center"
-                android:textColor="@color/red"
-                android:textSize="50pt">
+                android:textSize="50pt"
+                android:background="@drawable/chains">
             </TextView>
 
             <TextView
                 android:id = "@+id/answer6"
-                android:layout_width="wrap_content"
+                android:layout_width="50pt"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text = "○"
                 android:textAlignment="center"
-                android:textColor="@color/red"
-                android:textSize="50pt">
+                android:textSize="50pt"
+                android:background="@drawable/chains">
             </TextView>
 
             <TextView
                 android:id = "@+id/answer7"
-                android:layout_width="wrap_content"
+                android:layout_width="50pt"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text = "○"
                 android:textAlignment="center"
-                android:textColor="@color/red"
-                android:textSize="50pt">
+                android:textSize="50pt"
+                android:background="@drawable/chains">
             </TextView>
 
             <TextView
                 android:id = "@+id/answer8"
-                android:layout_width="wrap_content"
+                android:layout_width="50pt"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text = "○"
                 android:textAlignment="center"
-                android:textColor="@color/red"
-                android:textSize="50pt">
+                android:textSize="50pt"
+                android:background="@drawable/chains">
             </TextView>
 
         </LinearLayout>
+
+        <View
+            android:id="@+id/divider3"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:visibility="gone"
+            android:background="@null" />
+
+        <EditText
+            android:id = "@+id/Answerinput"
+            android:layout_width="1800px"
+            android:layout_height="40pt"
+            android:layout_gravity="center_horizontal"
+            android:textAlignment="center"
+            android:background="#50FFFFFF">
+        </EditText>
 
         <View
             android:id="@+id/divider2"
@@ -142,23 +152,13 @@
             android:layout_weight="1"
             android:background="@null" />
 
-        <EditText
-            android:id = "@+id/Answerinput"
-            android:layout_width="1800px"
-            android:layout_height="40pt"
-            android:layout_gravity="center_horizontal"
-            android:textAlignment="center">
-        </EditText>
-
         <Button
             android:id="@+id/submit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="300dp"
+            android:layout_height="100dp"
             android:layout_gravity="center_horizontal"
-            android:background="@color/red"
-            android:text="Submit"
-            android:textColor="@color/white">
-        </Button>
+            android:background="@drawable/submit"
+            android:textColor="@color/white"></Button>
 
     </LinearLayout>
 

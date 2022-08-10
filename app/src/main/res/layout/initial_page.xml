@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Enter Answer"
+            android:hint="Enter Answer"
             android:layout_gravity="center_vertical"
             android:textAlignment="center"
             />
@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Enter a Time to end ( HH : MM )"
+            android:hint="Enter a Time to end ( HH : MM )"
             android:layout_gravity="center_vertical"
             android:textAlignment="center"
             />

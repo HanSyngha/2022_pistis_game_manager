@@ -23,5 +23,6 @@ class InitialActivity : AppCompatActivity() {
 
         }
 
+
     }
 }

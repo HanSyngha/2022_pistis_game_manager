@@ -5,6 +5,8 @@ import android.icu.text.SimpleDateFormat
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.os.Handler
+import android.os.Looper
+import android.os.Message
 import android.util.TypedValue
 import android.view.View
 import android.view.ViewGroup
@@ -33,6 +35,8 @@ class GameActivity : AppCompatActivity() {
         val format = SimpleDateFormat("HH,mm,ss")
         var current_time : Long
 
+
+
         var timechecker = timer(period = 1000){
             current_time = System.currentTimeMillis()
             var time_slice = format.format(current_time).split(",")
@@ -45,44 +49,28 @@ class GameActivity : AppCompatActivity() {
             Lefttime.setText(left_time)
 
             if(left_minute <= 20){
-                answer1.setText(answer_unit[1])
-                answer1.setTextColor(getColor(R.color.red))
-                answer1.setBackgroundResource(0)
+                change_view(answer1,answer_unit[1])
             }
             if(left_minute <= 16){
-                answer2.setText(answer_unit[2])
-                answer2.setTextColor(getColor(R.color.red))
-                answer2.setBackgroundResource(0)
+                change_view(answer2,answer_unit[2])
             }
             if(left_minute <= 12){
-                answer3.setText(answer_unit[3])
-                answer3.setTextColor(getColor(R.color.red))
-                answer3.setBackgroundResource(0)
+                change_view(answer3,answer_unit[3])
             }
             if(left_minute <= 8){
-                answer4.setText(answer_unit[4])
-                answer4.setTextColor(getColor(R.color.red))
-                answer4.setBackgroundResource(0)
+                change_view(answer4,answer_unit[4])
             }
             if(left_minute <= 6){
-                answer5.setText(answer_unit[5])
-                answer5.setTextColor(getColor(R.color.red))
-                answer5.setBackgroundResource(0)
+                change_view(answer5,answer_unit[5])
             }
             if(left_minute <= 4){
-                answer6.setText(answer_unit[6])
-                answer6.setTextColor(getColor(R.color.red))
-                answer6.setBackgroundResource(0)
+                change_view(answer6,answer_unit[6])
             }
             if(left_minute <= 2){
-                answer7.setText(answer_unit[7])
-                answer7.setTextColor(getColor(R.color.red))
-                answer7.setBackgroundResource(0)
+                change_view(answer7,answer_unit[7])
             }
             if(left_minute == 0){
-                answer8.setText(answer_unit[8])
-                answer8.setTextColor(getColor(R.color.red))
-                answer8.setBackgroundResource(0)
+                change_view(answer8,answer_unit[8])
             }
         }
 
@@ -150,5 +138,16 @@ class GameActivity : AppCompatActivity() {
             }
         }
 
+    }
+
+    fun change_view(view: TextView, s:String){
+        val handler :Handler = object : Handler(Looper.getMainLooper()){
+            override fun handleMessage(msg: Message) {
+                view.setText(s)
+                view.setTextColor(getColor(R.color.red))
+                view.setBackgroundResource(0)
+            }
+        }
+        handler.obtainMessage().sendToTarget()
     }
 }

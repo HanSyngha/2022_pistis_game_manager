@@ -44,42 +44,42 @@ class GameActivity : AppCompatActivity() {
             var left_time = StringBuilder(left_hour.toString()).append(" : ").append(left_minute.toString()).append(" : ").append(left_second.toString())
             Lefttime.setText(left_time)
 
-            if(left_minute <= 20 && left_second == 0){
+            if(left_minute <= 20){
                 answer1.setText(answer_unit[1])
                 answer1.setTextColor(getColor(R.color.red))
                 answer1.setBackgroundResource(0)
             }
-            if(left_minute <= 16 && left_second == 0){
+            if(left_minute <= 16){
                 answer2.setText(answer_unit[2])
                 answer2.setTextColor(getColor(R.color.red))
                 answer2.setBackgroundResource(0)
             }
-            if(left_minute <= 12 && left_second == 0){
+            if(left_minute <= 12){
                 answer3.setText(answer_unit[3])
                 answer3.setTextColor(getColor(R.color.red))
                 answer3.setBackgroundResource(0)
             }
-            if(left_minute <= 8 && left_second == 0){
+            if(left_minute <= 8){
                 answer4.setText(answer_unit[4])
                 answer4.setTextColor(getColor(R.color.red))
                 answer4.setBackgroundResource(0)
             }
-            if(left_minute <= 6 && left_second == 0){
+            if(left_minute <= 6){
                 answer5.setText(answer_unit[5])
                 answer5.setTextColor(getColor(R.color.red))
                 answer5.setBackgroundResource(0)
             }
-            if(left_minute <= 4 && left_second == 0){
+            if(left_minute <= 4){
                 answer6.setText(answer_unit[6])
                 answer6.setTextColor(getColor(R.color.red))
                 answer6.setBackgroundResource(0)
             }
-            if(left_minute <= 2 && left_second == 0){
+            if(left_minute <= 2){
                 answer7.setText(answer_unit[7])
                 answer7.setTextColor(getColor(R.color.red))
                 answer7.setBackgroundResource(0)
             }
-            if(left_minute == 0 && left_second == 0){
+            if(left_minute == 0){
                 answer8.setText(answer_unit[8])
                 answer8.setTextColor(getColor(R.color.red))
                 answer8.setBackgroundResource(0)

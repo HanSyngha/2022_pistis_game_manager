@@ -12,13 +12,7 @@ class WrongAnswer : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.wrong_answer_popup)
-
-        val answer = intent.getStringExtra("ans")
-        val target_time = intent.getStringExtra("target_time")
-        val goback = Intent(this,GameActivity::class.java)
         var time : Int = 0
-        goback.putExtra("ans",answer)
-        goback.putExtra("target_time",target_time)
 
         val background_sound = MediaPlayer.create(this,R.raw.wrong_sound)
         val odap_sound = MediaPlayer.create(this,R.raw.odap)
@@ -31,7 +25,7 @@ class WrongAnswer : AppCompatActivity() {
             if(time == 4) odap_sound.start()
             if(time == 7) {
                 background_sound.stop()
-                startActivity(goback)
+                finish()
             }
 
         }

@@ -9,7 +9,6 @@ import android.os.Looper
 import android.os.Message
 import android.util.TypedValue
 import android.view.View
-import android.view.ViewGroup
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.main_page.*
@@ -53,28 +52,28 @@ class GameActivity : AppCompatActivity() {
             var left_time = StringBuilder(left_hour.toString()).append(" : ").append(left_minute.toString()).append(" : ").append(left_second.toString())
             Lefttime.setText(left_time)
 
-            if(left_minute <= 20){
+            if(left_hour == 0 && left_minute <= 20){
                 change_view(answer1,answer_unit[1])
             }
-            if(left_minute <= 16){
+            if(left_hour == 0 && left_minute <= 16){
                 change_view(answer2,answer_unit[2])
             }
-            if(left_minute <= 12){
+            if(left_hour == 0 && left_minute <= 12){
                 change_view(answer3,answer_unit[3])
             }
-            if(left_minute <= 8){
+            if(left_hour == 0 && left_minute <= 8){
                 change_view(answer4,answer_unit[4])
             }
-            if(left_minute <= 6){
+            if(left_hour == 0 && left_minute <= 6){
                 change_view(answer5,answer_unit[5])
             }
-            if(left_minute <= 4){
+            if(left_hour == 0 && left_minute <= 4){
                 change_view(answer6,answer_unit[6])
             }
-            if(left_minute <= 2){
+            if(left_hour == 0 && left_minute <= 2){
                 change_view(answer7,answer_unit[7])
             }
-            if(left_minute == 0){
+            if(left_hour == 0 && left_minute == 0){
                 change_view(answer8,answer_unit[8])
             }
         }
@@ -122,7 +121,6 @@ class GameActivity : AppCompatActivity() {
                 Answerinput.setBackgroundColor(View.INVISIBLE)
                 Answerinput.setText("Congratulation!!")
                 Answerinput.setTextSize(TypedValue.COMPLEX_UNIT_PX,80.toFloat())
-
                 divider3.setVisibility(View.VISIBLE)
 
                 var waiter = timer(period = 1000){
@@ -138,9 +136,8 @@ class GameActivity : AppCompatActivity() {
                 val wrong_answer = Intent(this,WrongAnswer::class.java)
                 wrong_answer.putExtra("ans",answer)
                 wrong_answer.putExtra("target_time",target_time_origin)
-                timechecker.cancel()
-                music_player.cancel()
                 startActivity(wrong_answer)
+                Answerinput.text = null
             }
         }
 

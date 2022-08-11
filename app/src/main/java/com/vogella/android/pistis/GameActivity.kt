@@ -35,6 +35,11 @@ class GameActivity : AppCompatActivity() {
         val format = SimpleDateFormat("HH,mm,ss")
         var current_time : Long
 
+        val background_music = MediaPlayer.create(this,R.raw.darkworld)
+
+        var music_player = timer(period = 1510){
+            background_music.start()
+        }
 
 
         var timechecker = timer(period = 1000){
@@ -134,6 +139,7 @@ class GameActivity : AppCompatActivity() {
                 wrong_answer.putExtra("ans",answer)
                 wrong_answer.putExtra("target_time",target_time_origin)
                 timechecker.cancel()
+                music_player.cancel()
                 startActivity(wrong_answer)
             }
         }
